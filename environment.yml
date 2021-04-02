@@ -1,0 +1,20 @@
+name: astr597
+channels:
+  - astropy
+dependencies:
+  - python=3.8
+  - pip
+  - notebook
+  - nbconvert
+  - numpy
+  - astropy>=4.0
+  - matplotlib>=3.0
+  - scipy>=1.0
+  - aplpy>=2.0
+  - reproject>=0.5
+  - photutils>=0.7
+  - astropy-healpix>=0.4
+  - regions>=0.4
+  - pip:
+    - PyVO>=1.1
+    - astroquery>=0.4.2.dev0
