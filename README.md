@@ -39,3 +39,20 @@ installed:
 * astroquery
 * APLpy
 * PyVO
+
+
+#### Assingments
+
+Assingments are due 2 weeks after the relevant notebooks are covered in class. The exception is the first
+assigment; it is due 2 weeks after the PR workflow (that is expected to be used for submission) is covered.
+
+* Units - Time - Coordinates: 2021-04-30
+* Fits - Table - Unified I/O: 2021-05-07
+
+Form of submission:
+
+* For each homework assigment open a pull request to this repository, with code placed in the
+``assignments/homework/<yourname>`` directory.
+Have the exercises submitted as ``.py`` files rather than notebooks, but further structuring is your
+choice (one file per topic, or one file per assigment, etc.). Performing code review on others' submission
+will be part of your next assigment.

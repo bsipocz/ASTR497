@@ -1,0 +1,1 @@
+Please create a subdirectory with your name and include the homework exercises in it.
