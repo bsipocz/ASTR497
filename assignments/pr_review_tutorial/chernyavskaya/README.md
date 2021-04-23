@@ -3,7 +3,7 @@ Factorial gives the factorial (the "!" function) of the argument:
 
     >>> from simple_functions import factorial
     >>> factorial(10)
-    3,628,800
+    3628800
 
 Fibonacci gives you all the numbers in the Fibonacci sequence up to the argument:
 
