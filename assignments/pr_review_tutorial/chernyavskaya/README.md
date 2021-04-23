@@ -1,4 +1,4 @@
-There are some two functions in simple_functions.py, "factorial" and "fibonacci".
+There are some two functions in simple_functions.py, ``factorial`` and ``fibonacci``.
 Factorial gives the factorial (the "!" function) of the argument:
 
     >>> from simple_functions import factorial
