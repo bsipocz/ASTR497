@@ -1,4 +1,4 @@
-Ok so I guess you are reading this cuz you wanna use my code. This code imports factorial from simple_functions
+Ok so I guess you are reading this cuz you wanna use my code. This code imports factorial from ``simple_functions``
 
     >>> from simple_functions import factorial
     >>> factorial(10)
