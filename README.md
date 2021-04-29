@@ -47,7 +47,7 @@ Assingments are due 2 weeks after the relevant notebooks are covered in class. T
 assigment; it is due 2 weeks after the PR workflow (that is expected to be used for submission) is covered.
 
 * Units - Time - Coordinates: 2021-04-30
-* Fits - Table - Unified I/O: 2021-05-07
+* Fits - Table - Unified I/O: 2021-05-14
 
 Form of submission:
 
