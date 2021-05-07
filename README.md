@@ -45,9 +45,11 @@ installed:
 
 Assingments are due 2 weeks after the relevant notebooks are covered in class. The exception is the first
 assigment; it is due 2 weeks after the PR workflow (that is expected to be used for submission) is covered.
+Early submissions are encouraged, however deadlines follow open source deadline tradition and are in AoE timezone.
 
 * Units - Time - Coordinates: 2021-04-30
 * Fits - Table - Unified I/O: 2021-05-14
+* WCS - WCSAxes: 2021-05-21
 
 Form of submission:
 
@@ -55,4 +57,7 @@ Form of submission:
 ``assignments/homework/<yourname>`` directory.
 Have the exercises submitted as ``.py`` files rather than notebooks, but further structuring is your
 choice (one file per topic, or one file per assigment, etc.). Performing code review on others' submission
-will be part of your next assigment.
+may be part of your next assigment.
+
+* Please do not include any changes to the class notebooks in your submission, neither submit temporary files,
+draft notebooks, etc.
