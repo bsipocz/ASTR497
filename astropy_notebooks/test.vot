@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Produced with astropy.io.votable version 4.3.dev719+g0cb614144
+     http://www.astropy.org/ -->
+<VOTABLE version="1.4" xmlns="http://www.ivoa.net/xml/VOTable/v1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ivoa.net/xml/VOTable/v1.4">
+ <RESOURCE type="results">
+  <TABLE>
+   <FIELD ID="name" arraysize="4" datatype="unicodeChar" name="name"/>
+   <FIELD ID="obs_date" arraysize="10" datatype="unicodeChar" name="obs_date"/>
+   <FIELD ID="mag_b" datatype="double" name="mag_b"/>
+   <FIELD ID="mag_v" datatype="double" name="mag_v"/>
+   <DATA>
+    <TABLEDATA>
+     <TR>
+      <TD>M31</TD>
+      <TD>2012-01-02</TD>
+      <TD>17</TD>
+      <TD>17.5</TD>
+     </TR>
+     <TR>
+      <TD>M31</TD>
+      <TD>2012-01-02</TD>
+      <TD>17.1</TD>
+      <TD>17.4</TD>
+     </TR>
+     <TR>
+      <TD>M101</TD>
+      <TD>2012-01-02</TD>
+      <TD>15.1</TD>
+      <TD>13.5</TD>
+     </TR>
+     <TR>
+      <TD>M82</TD>
+      <TD>2012-02-14</TD>
+      <TD>16.2</TD>
+      <TD>14.5</TD>
+     </TR>
+     <TR>
+      <TD>M31</TD>
+      <TD>2012-02-14</TD>
+      <TD>16.9</TD>
+      <TD>17.3</TD>
+     </TR>
+     <TR>
+      <TD>M82</TD>
+      <TD>2012-02-14</TD>
+      <TD>15.2</TD>
+      <TD>15.5</TD>
+     </TR>
+     <TR>
+      <TD>M101</TD>
+      <TD>2012-02-14</TD>
+      <TD>15</TD>
+      <TD>13.6</TD>
+     </TR>
+     <TR>
+      <TD>M82</TD>
+      <TD>2012-03-26</TD>
+      <TD>15.7</TD>
+      <TD>16.5</TD>
+     </TR>
+     <TR>
+      <TD>M101</TD>
+      <TD>2012-03-26</TD>
+      <TD>15.1</TD>
+      <TD>13.5</TD>
+     </TR>
+     <TR>
+      <TD>M101</TD>
+      <TD>2012-03-26</TD>
+      <TD>14.8</TD>
+      <TD>14.3</TD>
+     </TR>
+    </TABLEDATA>
+   </DATA>
+  </TABLE>
+ </RESOURCE>
+</VOTABLE>
