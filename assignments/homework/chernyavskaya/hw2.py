@@ -13,7 +13,7 @@ plt.rc('figure', figsize=(10, 6))
 # Challenge
 #1. Examine the headers of the first and second HDU in the point source catalog and try adding new keywords to them or changing them
 hdu1 = fits.open('../../../astropy_notebooks/data/LMCDensFits1k.fits')
-hdu2 = fits.open('astropy_notebooks/data/gaia_lmc_psc.fits')
+hdu2 = fits.open('../../../astropy_notebooks/data/gaia_lmc_psc.fits')
 header1 = hdu1[0].header
 header1['telescop'] = 'gaia'
 print(header1)
@@ -44,8 +44,8 @@ plt.title('Galactic coordinate plot of sources on sky', fontsize = 20)
 plt.show();
 
 #4. Try and produce a new FITS file that contains the image in the primary HDU and the above table in the second HDU
-primary_hdu = fits.PrimaryHDU(fits.getdata('astropy_notebooks/data/LMCDensFits1k.fits', extension=0))
-secondary_hdu = fits.BinTableHDU(data=fits.getdata('astropy_notebooks/data/gaia_lmc_psc.fits', extension=1))
+primary_hdu = fits.open('../../../astropy_notebooks/data/LMCDensFits1k.fits')[0]
+secondary_hdu = fits.open('../../../astropy_notebooks/data/gaia_lmc_psc.fits')[1]
 hdnew = fits.HDUList([primary_hdu, secondary_hdu])
 hdnew.writeto('hdnew.fits')
 
@@ -89,7 +89,7 @@ obs = Table(rows=[('M31' , '2012-01-02', 17.0, 17.5),
                   ('M101', '2012-03-26', 14.8, 14.3)],
             names=['name', 'obs_date', 'mag_b', 'mag_v'])
 #1. Make a new table that shows every other row, starting with the second row? (that is, the second, fourth, sixth, etc. rows).
-evens = obs[1:10:2]
+evens = obs[1::2]
 print(evens)
 
 # 2. Make a new table the only contains rows where name is M31
@@ -125,7 +125,7 @@ plt.show();
 
 # 3. Make a new table (based on the full table) that contains only the RA, Dec, and the j_m, h_m and k_m columns, then try and write out this catalog into a format that you can read into another software package. For example, try and write out the catalog into CSV format, then read it into a spreadsheet software package (e.g. Excel, Google Docs, Numbers, OpenOffice). You may run into an issue at this point - if so, take a look at https://github.com/astropy/astropy/issues/7357 to see how to fix it.
 t2 = Table()
-t2['ra'], t2['dec'], t2['j_m'], t2['h_m'], t2['k_m'] = Mass2['ra'], Mass2['dec'], Mass2['j_m'], Mass2['h_m'], Mass2['k_m']
+t2 = Mass2['ra', 'dec', 'j_m', 'h_m', 'k_m']
 
 t2.write('t2.csv')
 print("Ran into no issues opening in Excel.")
