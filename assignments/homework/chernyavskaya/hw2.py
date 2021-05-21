@@ -12,7 +12,7 @@ plt.rc('figure', figsize=(10, 6))
 
 # Challenge
 #1. Examine the headers of the first and second HDU in the point source catalog and try adding new keywords to them or changing them
-hdu1 = fits.open('astropy_notebooks/data/LMCDensFits1k.fits')
+hdu1 = fits.open('../../../astropy_notebooks/data/LMCDensFits1k.fits')
 hdu2 = fits.open('astropy_notebooks/data/gaia_lmc_psc.fits')
 header1 = hdu1[0].header
 header1['telescop'] = 'gaia'
