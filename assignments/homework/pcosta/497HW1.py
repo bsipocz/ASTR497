@@ -56,13 +56,15 @@ print(separation)
 #3
 #Generate random positions in the Galactic plane (between l=0 and l=360 and b=-1 and b=+1),
 # then make a plot showing the position on the sky of these points in FK5.
-rand_coords = SkyCoord([randint(1, 360), randint(1, 360), randint(1, 360)]*u.deg, [random()*randint(-1, 1), random()*randint(-1, 1), random()*randint(-1., 1)]*u.deg, frame='galactic')
+rand_coords = SkyCoord(np.random.uniform(1, 360, 1000)*u.deg, np.random.uniform(-1, 1, 1000)*u.deg, frame='galactic')
 rand_coords.transform_to(FK5())
 rand_FK5 = rand_coords.transform_to(FK5())
-first_coord = rand_FK5[0]
-second_coord = rand_FK5[1]
-third_coord = rand_FK5[2]
-plt.plot(first_coord)
+print(type(rand_FK5))
+first_coord = rand_FK5.ra
+second_coord = rand_FK5.dec
+plt.plot(first_coord, second_coord, 'o', markersize = 1)
+plt.show()
+
 #4
 #Make a plot showing the altitude above the horizon of the Sun as seen from Seattle
 # over the course of today.
