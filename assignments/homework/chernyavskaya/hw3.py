@@ -3,7 +3,9 @@ from astropy.io import fits
 from astropy.coordinates import SkyCoord
 from astropy.wcs import WCS
 from astropy.visualization import simple_norm
+from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
+ 
 plt.rc('image', origin='lower')
 plt.rc('figure', figsize=(10, 6))
 
@@ -11,20 +13,16 @@ plt.rc('figure', figsize=(10, 6))
 # Find the position of all the stars in the data/gaia_lmc_psc.fits catalog in pixel coordinates, and overplot them on the image (you'll need to use things we have learned in previous tutorials).
 hdu_image = fits.open('../../../astropy_notebooks/data/LMCDensFits1k.fits')
 wcs_image = WCS(hdu_image[0].header)
+
 hdu_gaia = fits.open('../../../astropy_notebooks/data/gaia_lmc_psc.fits')
-wcs_gaia = WCS(hdu_gaia[1].header)
-ra = hdu_gaia[1].data['ra']
-dec = hdu_gaia[1].data['dec']
-stars = SkyCoord(ra=ra * u.deg, dec=dec * u.deg)
-overplot = wcs_image.world_to_pixel(stars)
-ax = plt.subplot(projection=wcs_image)
-lon = ax.coords[0]
-lat = ax.coords[1]
-lon.set_axislabel("Galactic Longitude")
-lat.set_axislabel("Galactic Latitude")
-ax.imshow(hdu_image[0].data);
-ax.plot(overplot[0], overplot[1], 'w*', markersize=2);
-ax.grid()
+stars = SkyCoord(ra=hdu_gaia[1].data['ra'], dec=hdu_gaia[1].data['dec'], unit='deg')
+px, py = wcs_image.world_to_pixel(stars)
+
+plt.imshow(hdu_image[0].data);
+plt.plot(px, py, 'w*', markersize=2);
+plt.xlabel('Galactic Longitude')
+plt.ylabel('Galactic Latitude')
+plt.grid();
 plt.show()
 
 
@@ -38,12 +36,12 @@ ra = ax.coords[0]
 dec = ax.coords[1]
 ra.set_axislabel("Right Ascension")
 dec.set_axislabel("Declination")
-ax.imshow(hdu_iras[0].data, norm = sqrt_norm);
-ax.contour(hdu_image[0].data, transform=ax.get_transform(wcs_image), colors = 'black', levels=[50, 100, 250, 500]);
+ax.imshow(hdu_iras[0].data, norm = sqrt_norm)
+ax.contour(gaussian_filter(hdu_image[0].data, 3), transform=ax.get_transform(wcs_image), colors = 'black');
 ax.grid()
-ax.set_xlim(-0.5, 501);
-ax.set_ylim(-0.5, 502);
-plt.show()
+ax.set_xlim(-0.5, 499.5)
+ax.set_ylim(-0.5, 499.5);
+ax.show()
 
 # 2. Add the positions of the GAIA sources from the table used in previous tutorials to the image
 ax = plt.subplot(projection=wcs_iras)
@@ -51,13 +49,13 @@ ra = ax.coords[0]
 dec = ax.coords[1]
 ra.set_axislabel("Right Ascension")
 dec.set_axislabel("Declination")
-ax.imshow(hdu_iras[0].data, norm = sqrt_norm);
-ax.contour(hdu_image[0].data, transform=ax.get_transform(wcs_image), colors = 'black', levels=[50, 100, 250, 500]);
-ax.set_xlim(-0.5, 501);
-ax.set_ylim(-0.5, 502);
-ax.plot(overplot[0], overplot[1], 'wo', markersize=2);
+ax.imshow(hdu_iras[0].data, norm = sqrt_norm)
+ax.contour(gaussian_filter(hdu_image[0].data, 3), transform=ax.get_transform(wcs_image), colors = 'black');
+ax.plot(stars.ra, stars.dec, '.w', transform=ax.get_transform('world'))
 ax.grid()
-plt.show()
+ax.set_xlim(-0.5, 499.5)
+ax.set_ylim(-0.5, 499.5);
+ax.show()
 
 # 3. If you have FITS images available, try this out with your own data!
 print('I do not have my FITS images readily available, sorry.')
