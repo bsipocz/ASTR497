@@ -9,9 +9,9 @@ plt.rc('figure', figsize=(10, 6))
 
 # Challenge:
 # Find the position of all the stars in the data/gaia_lmc_psc.fits catalog in pixel coordinates, and overplot them on the image (you'll need to use things we have learned in previous tutorials).
-hdu_image = fits.open('astropy_notebooks/data/LMCDensFits1k.fits')
+hdu_image = fits.open('../../../astropy_notebooks/data/LMCDensFits1k.fits')
 wcs_image = WCS(hdu_image[0].header)
-hdu_gaia = fits.open('astropy_notebooks/data/gaia_lmc_psc.fits')
+hdu_gaia = fits.open('../../../astropy_notebooks/data/gaia_lmc_psc.fits')
 wcs_gaia = WCS(hdu_gaia[1].header)
 ra = hdu_gaia[1].data['ra']
 dec = hdu_gaia[1].data['dec']
@@ -30,7 +30,7 @@ plt.show()
 
 # Challenge:
 # 1. Make a figure of the IRAS data used above, with the GAIA source density map shown as a contour (note that you might need to smooth the GAIA source density image - check the scipy.ndimage module for some useful functions!)
-hdu_iras = fits.open('astropy_notebooks/data/ISSA_100_LMC.fits')
+hdu_iras = fits.open('../../../astropy_notebooks/data/ISSA_100_LMC.fits')
 wcs_iras = WCS(hdu_iras[0].header)
 sqrt_norm = simple_norm(hdu_iras[0].data, stretch = 'log', percent=97)
 ax = plt.subplot(projection=wcs_iras)
