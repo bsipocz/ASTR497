@@ -1,7 +1,8 @@
 def fibonacci(max):
     values = [0, 1]
-    while values[-2] + values[-1] < max:
-        values.append(values[-2] + values[-1])
+    iter = 0
+    while values[0] + values[1] < max:
+        values.append(values[iter] + values[iter+=1])
     return values
 
 
