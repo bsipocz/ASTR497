@@ -50,6 +50,9 @@ Early submissions are encouraged, however deadlines follow open source deadline 
 * Units - Time - Coordinates: 2021-04-30
 * Fits - Table - Unified I/O: 2021-05-14
 * WCS - WCSAxes: 2021-05-21
+* NDData - Convolution - Reproject - Statistic: 2021-05-28
+* Modeling - Photometry: 2021-06-04
+
 
 Form of submission:
 
