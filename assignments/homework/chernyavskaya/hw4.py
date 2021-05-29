@@ -7,7 +7,7 @@ from astropy.convolution import Gaussian2DKernel, convolve
 from scipy.ndimage import convolve as scipy_convolve
 from reproject import reproject_interp as r_i, reproject_exact as r_e
 from photutils.datasets import load_star_image
-from astropy.stats import sigma_clip, sigma_clipped_stats, mad_std, jackknife_stats
+from astropy.stats import sigma_clip, sigma_clipped_stats, mad_std, median_absolute_deviation, jackknife_stats
 
 
 import matplotlib.pyplot as plt
@@ -51,5 +51,6 @@ print("estimate, bias, stderr, conf_interval=",jackknife_stats(np.array([1,2,3,4
 # standard deviation using the median absolute deviation for the sigma clipped array we produced before.
 star_image = load_star_image()
 clipped_image = sigma_clip(star_image.data, sigma=2, maxiters=20)
+mad = median_absolute_deviation(clipped_image)
 robust_std_mad = mad_std(clipped_image)
-print("\nRobust standard deviation using MAD:", robust_std_mad)
+print("\nMedian absolute deviation:", mad, "\nRobust standard deviation using MAD:", robust_std_mad)
