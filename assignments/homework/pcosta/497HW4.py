@@ -18,7 +18,7 @@ norm = convolve(data, kernel, normalize_kernel=True)
 raw = convolve(data, kernel, normalize_kernel=False)
 if np.array_equal(default, norm):
     print("Kernel is auto-normalized. Therefore, setting '''normalize_kernel = False''' changes this behavior")
-elif np.array_equal(default, norm):
+elif np.array_equal(default, raw):
     print("Kernel is not auto-normalized.")
 
 normKernel = np.array([0.2, 0.2, 0.4])
@@ -39,7 +39,7 @@ plt.show()
 
 #2.
 ax = plt.subplot(projection=wcs_iras)
-ax.imshow(hdu_gaia.data, vmax=100)
+ax.imshow(gaia_reprojected, vmax=100)
 plt.show()
 
 #Statistics Notebook
