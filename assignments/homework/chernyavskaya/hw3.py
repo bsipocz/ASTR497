@@ -20,8 +20,8 @@ px, py = wcs_image.world_to_pixel(stars)
 
 plt.imshow(hdu_image[0].data);
 plt.plot(px, py, 'w*', markersize=2);
-plt.xlabel('Galactic Longitude')
-plt.ylabel('Galactic Latitude')
+plt.xlabel('Pixel x')
+plt.ylabel('Pixel y')
 plt.grid();
 plt.show()
 
@@ -41,7 +41,7 @@ ax.contour(gaussian_filter(hdu_image[0].data, 3), transform=ax.get_transform(wcs
 ax.grid()
 ax.set_xlim(-0.5, 499.5)
 ax.set_ylim(-0.5, 499.5);
-ax.show()
+plt.show()
 
 # 2. Add the positions of the GAIA sources from the table used in previous tutorials to the image
 ax = plt.subplot(projection=wcs_iras)
@@ -55,7 +55,7 @@ ax.plot(stars.ra, stars.dec, '.w', transform=ax.get_transform('world'))
 ax.grid()
 ax.set_xlim(-0.5, 499.5)
 ax.set_ylim(-0.5, 499.5);
-ax.show()
+plt.show()
 
 # 3. If you have FITS images available, try this out with your own data!
 print('I do not have my FITS images readily available, sorry.')
