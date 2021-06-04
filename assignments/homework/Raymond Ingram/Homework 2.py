@@ -44,8 +44,8 @@ from astropy.table import Table
 # In[3]:
 
 
-hdulist1 = fits.open('data/LMCDensFits1k.fits')
-hdulist2 = fits.open('data/gaia_lmc_psc.fits')
+hdulist1 = fits.open('../../../astropy_notebooks/data/LMCDensFits1k.fits')
+hdulist2 = fits.open('../../../astropy_notebooks/data/gaia_lmc_psc.fits')
 
 
 # In[4]:
