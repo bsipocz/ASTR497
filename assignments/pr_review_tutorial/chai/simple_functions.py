@@ -10,3 +10,4 @@ def factorial(value):
         return 1
     else:
         return value * factorial(value - 1)
+

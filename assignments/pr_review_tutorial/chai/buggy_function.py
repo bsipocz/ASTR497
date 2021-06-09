@@ -1,9 +1,9 @@
 import math
 
 
-def angle_to_sexigesimal(angle_in_degrees, decimals=3):
+def angle_to_hexidecimal(angle_in_degrees, decimals=3):
     """
-    Convert the given angle to a sexigesimal string of hours of RA.
+    Convert the given angle to a hexidecimal string of hours of RA.
 
     Parameters
     ----------
@@ -13,7 +13,7 @@ def angle_to_sexigesimal(angle_in_degrees, decimals=3):
     Returns
     -------
     hms_str : str
-        The sexigesimal string giving the hours, minutes, and seconds of RA for
+        The hexidecimal string giving the hours, minutes, and seconds of RA for
         the given `angle_in_degrees`
 
     """
